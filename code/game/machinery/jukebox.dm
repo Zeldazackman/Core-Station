@@ -32,6 +32,8 @@
 	var/max_queue_len = 3						// How many songs are we allowed to queue up?
 	var/list/queue = list()
 	//VOREStation Add End
+	var/current_genre = "Electronic" //What is our current genre?
+	var/list/genres = list("Classical and Orchestral", "Country and Western", "Disco, Funk, Soul, and R&B", "Electronic", "Folk and Indie", "Hip-Hop and Rap", "Jazz", "Metal", "Pop", "Rock") //Avaliable genres.
 	var/datum/track/current_track
 	var/list/datum/track/tracks = list(
 		new/datum/track("Beyond", 'sound/ambience/ambispace.ogg'),
@@ -54,6 +56,10 @@
 		new/datum/track("Russkiy rep Diskoteka", 'sound/music/russianrapdisco.ogg')
 	)
 
+	// Only visible if emagged
+	var/list/datum/track/emag_tracks = list(
+	)
+
 /obj/machinery/media/jukebox/Initialize()
 	. = ..()
 	default_apply_parts()
@@ -72,8 +78,12 @@
 		tracks.Cut()
 		secret_tracks.Cut()
 		for(var/datum/track/T in all_jukebox_tracks) //Load them
+			if(!T.jukebox)
+				continue
 			if(T.secret)
 				secret_tracks |= T
+			if(T.emag)
+				emag_tracks |=T
 			else
 				tracks |= T
 	else if(!LAZYLEN(tracks)) //We don't even have default tracks
