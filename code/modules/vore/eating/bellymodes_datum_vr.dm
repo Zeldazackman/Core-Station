@@ -4,6 +4,10 @@ GLOBAL_LIST_INIT(digest_modes, list())
 	var/id = DM_HOLD
 	var/noise_chance = 0
 
+/datum/digest_mode/noisy
+	id = DM_NOISY
+	noise_chance = 50
+
 /**
  * This proc has all the behavior for the given digestion mode.
  * It returns either null, or an associative list in the following format:
