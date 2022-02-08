@@ -453,11 +453,14 @@
 	has_logs = 1
 	can_rotate = 0
 
+/obj/machinery/vending/wallmed1/public
+	products = list(/obj/item/stack/medical/bruise_pack = 8,/obj/item/stack/medical/ointment = 8,/obj/item/weapon/reagent_containers/hypospray/autoinjector = 16,/obj/item/device/healthanalyzer = 4)
+
 /obj/machinery/vending/security
 	name = "SecTech"
 	desc = "A security equipment vendor."
 	description_fluff = "Security vending is kindly provided by the Lawson Arms company, Hephaestus Industries' law enforcement division."
-	product_ads = "Crack capitalist skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
+	product_ads = "Crack clown skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
 	icon_state = "sec"
 	req_access = list(access_security)
 	products = list(/obj/item/weapon/handcuffs = 8,
