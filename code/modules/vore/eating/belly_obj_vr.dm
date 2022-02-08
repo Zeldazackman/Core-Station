@@ -33,10 +33,10 @@
 	var/can_taste = FALSE					// If this belly prints the flavor of prey when it eats someone.
 	var/bulge_size = 0.25					// The minimum size the prey has to be in order to show up on examine.
 	var/display_absorbed_examine = FALSE	// Do we display absorption examine messages for this belly at all?
-	var/absorbed_desc					 // Desc shown to absorbed prey. Defaults to regular if left empty.
+	var/absorbed_desc						// Desc shown to absorbed prey. Defaults to regular if left empty.
 	var/shrink_grow_size = 1				// This horribly named variable determines the minimum/maximum size it will shrink/grow prey to.
 	var/transferlocation					// Location that the prey is released if they struggle and get dropped off.
-	var/transferlocation_secondary // Secondary location that prey is released to.
+	var/transferlocation_secondary			// Secondary location that prey is released to.
 	var/release_sound = "Splatter"			// Sound for letting someone out. Replaced from True/false
 	var/mode_flags = 13						// Stripping, numbing, etc.
 	var/fancy_vore = FALSE					// Using the new sounds?
