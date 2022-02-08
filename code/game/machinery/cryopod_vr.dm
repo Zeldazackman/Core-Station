@@ -8,6 +8,10 @@
 /obj/machinery/cryopod/robot
 	spawnpoint_type = /datum/spawnpoint/cyborg
 
+// Used at centcomm for the elevator
+/obj/machinery/cryopod/robot/door/dorms
+	spawnpoint_type = /datum/spawnpoint/tram
+
 /obj/machinery/cryopod/robot/door/gateway
 	name = "public teleporter"
 	desc = "The short-range teleporter you might've came in from. You could leave easily using this."
