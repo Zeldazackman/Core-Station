@@ -2733,6 +2733,7 @@
 /obj/item/clothing/glasses/omnihud,
 /obj/item/weapon/paper/dockingcodes/sd,
 /obj/item/device/retail_scanner/command,
+/obj/item/weapon/storage/box/PDAs,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/hop)
 "kO" = (
@@ -3283,6 +3284,10 @@
 /obj/effect/landmark/start/visitor,
 /turf/simulated/floor/wood,
 /area/stellardelight/deck3/cafe)
+"ms" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck3/portfore)
 "mv" = (
 /obj/effect/map_helper/airlock/atmos/pump_out_external,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
@@ -3650,11 +3655,12 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/heads/hos)
 "nL" = (
-/obj/structure/sign/poster{
-	dir = 8
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals5{
 	dir = 8
+	},
+/obj/machinery/item_bank{
+	dir = 4;
+	pixel_x = -26
 	},
 /turf/simulated/floor/tiled,
 /area/stellardelight/deck3/aft)
@@ -4614,6 +4620,13 @@
 /obj/random/vendorfood,
 /turf/simulated/floor/tiled,
 /area/stellardelight/deck3/aft)
+"qY" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck3/portaft)
 "qZ" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/power/apc/angled{
@@ -8048,6 +8061,11 @@
 	},
 /turf/simulated/floor/airless,
 /area/stellardelight/deck3/exterior)
+"Dk" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/reagent_dispensers/watertank,
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck3/portaft)
 "Dn" = (
 /obj/effect/floor_decal/steeldecal/steel_decals5{
 	dir = 4
@@ -10101,6 +10119,7 @@
 /obj/structure/cable/green{
 	icon_state = "2-8"
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck3/portfore)
 "KS" = (
@@ -21525,7 +21544,7 @@ eF
 IP
 YD
 bC
-Ns
+ms
 Ns
 Ns
 Hk
@@ -26955,8 +26974,8 @@ Ne
 iS
 iS
 Kz
-iS
-FG
+Dk
+qY
 JW
 Ld
 KD
