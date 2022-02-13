@@ -307,14 +307,14 @@
 	desc = "Den hosted by the biggest alpha wolf of the wilderness"
 	mappath = 'maps/submaps/surface_submaps/plains/greatwolfden.dmm'
 	cost = 15
-/*
+
 /datum/map_template/surface/plains/dogbase
 	name = "Dog Base"
 	desc = "A highly secured base with hungry trained canines"
 	mappath = 'maps/submaps/surface_submaps/plains/dogbase.dmm'
 	cost = 20
 	allow_duplicates = FALSE
-*/
+
 /datum/map_template/surface/plains/emptycabin
 	name = "Empty Cabin"
 	desc = "An inconspicuous looking den hosted by a hungry otie"
@@ -326,7 +326,7 @@
 	desc = "A large oppressing wolf, supervising from above its cliff"
 	mappath = 'maps/submaps/surface_submaps/plains/lonewolf.dmm'
 	cost = 5
-/*
+
 /datum/map_template/surface/plains/otieshelter
 	name = "Otie Shelter"
 	desc = "A experimental lab of various breeds of oties"
@@ -339,7 +339,7 @@
 	mappath = 'maps/submaps/surface_submaps/plains/syndisniper.dmm'
 
 	cost = 5
-*/
+
 /datum/map_template/surface/plains/drgnplateu
 	name = "Dragon Plateu"
 	desc = "A dangerous plateu of cliffs home to a rampant gold hoarding dragon"
