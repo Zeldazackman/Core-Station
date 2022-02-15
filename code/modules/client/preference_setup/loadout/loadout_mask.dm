@@ -20,17 +20,22 @@
 /datum/gear/mask/sterile
 	display_name = "sterile mask"
 	path = /obj/item/clothing/mask/surgical
-	cost = 2
+	cost = 1
 
 /datum/gear/mask/plaguedoctor
 	display_name = "plague doctor's mask"
 	path = /obj/item/clothing/mask/gas/plaguedoctor
-	cost = 3 ///Because it functions as a gas mask, and therefore has a mechanical advantage.
+	cost = 1 ///Because it functions as a gas mask, and therefore has a mechanical advantage.
 
 /datum/gear/mask/plaguedoctor2
 	display_name = "golden plague doctor's mask"
 	path = /obj/item/clothing/mask/gas/plaguedoctor/gold
-	cost = 3 ///Because it functions as a gas mask, and therefore has a mechanical advantage.
+	cost = 1 ///Because it functions as a gas mask, and therefore has a mechanical advantage.
+
+/datum/gear/mask/bigshot
+	display_name = "Big Shot's mask"
+	path = /obj/item/clothing/mask/gas/bigshot
+	cost = 1 ///Because it functions as a gas mask, and therefore has a mechanical advantage.
 
 /datum/gear/mask/mouthwheat
 	display_name = "mouth wheat"
