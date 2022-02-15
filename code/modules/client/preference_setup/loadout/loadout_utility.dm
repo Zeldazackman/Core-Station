@@ -78,12 +78,12 @@
 /datum/gear/utility/securecase
 	display_name = "secure briefcase"
 	path =/obj/item/weapon/storage/secure/briefcase
-	cost = 2
+	cost = 0
 
 /datum/gear/utility/laserpointer
 	display_name = "laser pointer"
 	path =/obj/item/device/laser_pointer
-	cost = 2
+	cost = 0
 
 /datum/gear/utility/flashlight
 	display_name = "flashlight"
@@ -92,7 +92,7 @@
 /datum/gear/utility/maglight
 	display_name = "flashlight, maglight"
 	path = /obj/item/device/flashlight/maglight
-	cost = 2
+	cost = 0
 
 /datum/gear/utility/flashlight/color
 	display_name = "flashlight, small (selection)"
@@ -149,19 +149,19 @@ modular computers
 	display_name = "tablet computer: cheap"
 	display_name = "tablet computer, cheap"
 	path = /obj/item/modular_computer/tablet/preset/custom_loadout/cheap
-	cost = 3
+	cost = 1
 
 /datum/gear/utility/normaltablet
 	display_name = "tablet computer: advanced"
 	display_name = "tablet computer, advanced"
 	path = /obj/item/modular_computer/tablet/preset/custom_loadout/advanced
-	cost = 4
+	cost = 2
 
 /datum/gear/utility/customtablet
 	display_name = "tablet computer: custom"
 	display_name = "tablet computer, custom"
 	path = /obj/item/modular_computer/tablet
-	cost = 4
+	cost = 2
 
 /datum/gear/utility/customtablet/New()
 	..()
@@ -170,17 +170,17 @@ modular computers
 /datum/gear/utility/cheaplaptop
 	display_name = "laptop computer, cheap"
 	path = /obj/item/modular_computer/laptop/preset/custom_loadout/cheap
-	cost = 4
+	cost = 2
 
 /datum/gear/utility/normallaptop
 	display_name = "laptop computer, advanced"
 	path = /obj/item/modular_computer/laptop/preset/custom_loadout/advanced
-	cost = 5
+	cost = 3
 
 /datum/gear/utility/customlaptop
 	display_name = "laptop computer, custom"
 	path = /obj/item/modular_computer/laptop/preset/
-	cost = 6 //VOREStation Edit
+	cost = 4 //VOREStation Edit
 
 /datum/gear/utility/customlaptop/New()
 	..()
