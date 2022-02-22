@@ -343,8 +343,8 @@ BLIND     // can't see anything
 	icon_state = "aviator"
 
 /obj/item/clothing/glasses/sunglasses/bigshot
-	name = "big shot glasses"
-	desc = "A pair of glasses to help you look like a \[BIG SHOT]."
+	name = "big shot's glasses"
+	desc = "A pair of glasses to help you feel more like a \[BIG SHOT]."
 	icon_state = "bigshot"
 
 /obj/item/clothing/glasses/welding
