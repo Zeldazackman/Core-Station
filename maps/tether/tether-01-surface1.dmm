@@ -19614,7 +19614,7 @@
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
 "aGr" = (
-/obj/structure/bed/chair/sofa/brown/right,
+/obj/structure/bed/chair/sofa/right/brown,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -19630,7 +19630,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/cargostore/office)
 "aGs" = (
-/obj/structure/bed/chair/sofa/brown/corner,
+/obj/structure/bed/chair/sofa/corner/brown,
 /obj/effect/landmark/start{
 	name = "Cargo Technician"
 	},
@@ -19951,7 +19951,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/cargostore/office)
 "aGU" = (
-/obj/structure/bed/chair/sofa/brown/left{
+/obj/structure/bed/chair/sofa/left/brown{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -33290,7 +33290,7 @@
 "gWO" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/rust,
-/obj/item/toy/crossbow,
+/obj/item/weapon/gun/projectile/revolver/toy/crossbow,
 /turf/simulated/floor/plating,
 /area/tether/surfacebase/funny/hideyhole)
 "gYx" = (
@@ -36719,8 +36719,8 @@
 /area/maintenance/lower/trash_pit)
 "qhs" = (
 /obj/structure/table/rack,
-/obj/item/toy/crossbow,
 /obj/item/weapon/coin/silver,
+/obj/item/weapon/gun/projectile/revolver/toy/crossbow,
 /turf/simulated/floor/plating,
 /area/tether/surfacebase/funny/hideyhole)
 "qjE" = (
