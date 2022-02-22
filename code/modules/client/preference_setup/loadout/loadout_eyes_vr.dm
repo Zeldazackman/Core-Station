@@ -67,5 +67,5 @@
 	path = /obj/item/clothing/glasses/hud/health/eyepatch
 
 /datum/gear/eyes/bigshot
-	display_name = "Big Shot glasses"
+	display_name = "Big Shot's Glasses"
 	path = /obj/item/clothing/glasses/sunglasses/bigshot
