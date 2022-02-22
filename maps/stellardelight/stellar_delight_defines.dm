@@ -153,15 +153,6 @@
 		list("Grass Cave")
 		)
 
-	ai_shell_restricted = TRUE
-	ai_shell_allowed_levels = list(
-		Z_LEVEL_SHIP_LOW,
-		Z_LEVEL_SHIP_MID,
-		Z_LEVEL_SHIP_HIGH,
-		Z_LEVEL_MISC,
-		Z_LEVEL_BEACH,
-		Z_LEVEL_AEROSTAT
-		)
 
 /*
 	belter_docked_z = 		list(Z_LEVEL_SPACE_LOW)
