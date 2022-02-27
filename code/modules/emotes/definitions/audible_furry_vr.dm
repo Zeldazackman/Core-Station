@@ -141,3 +141,7 @@
     key = "squeaky"
     emote_message_3p = "squeaks."
     emote_sound = 'sound/items/drop/plushie.ogg'
+/decl/emote/audible/fart
+    key = "fart"
+    emote_message_3p = "farts!"
+    emote_sound = 'sound/effects/fart1.ogg'
