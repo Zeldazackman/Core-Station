@@ -130,6 +130,7 @@ var/list/_human_default_emotes = list(
 	/decl/emote/audible/spiderchitter,
 	/decl/emote/audible/spiderpurr,
 	/decl/emote/audible/squeaky,
+	/decl/emote/audible/fart,
 	/decl/emote/visible/mlem,
 	/decl/emote/visible/blep,
 
@@ -261,6 +262,7 @@ var/list/_simple_mob_default_emotes = list(
 	/decl/emote/audible/spiderchitter,
 	/decl/emote/audible/spiderpurr,
 	/decl/emote/audible/squeaky,
+	/decl/emote/audible/fart,
 	/decl/emote/visible/mlem,
 	/decl/emote/visible/blep,
 	/decl/emote/audible/prbt
