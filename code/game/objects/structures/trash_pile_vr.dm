@@ -20,7 +20,8 @@
 	var/global/list/unique_gamma = list(
 		/obj/item/weapon/gun/projectile/pirate,
 		/obj/item/clothing/accessory/permit/gun,
-		/obj/item/weapon/gun/projectile/dartgun
+		/obj/item/weapon/gun/projectile/dartgun,
+		/obj/item/clothing/gloves/black/bloodletter
 		)
 
 	var/global/list/allocated_gamma = list()
