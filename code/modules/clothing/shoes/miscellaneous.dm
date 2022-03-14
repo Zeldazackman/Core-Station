@@ -105,25 +105,6 @@
 	else
 		playsound(src, "clownstep", 20, 1)
 
-/obj/item/clothing/shoes/fart_shoes
-	desc = "This was a mistake"
-	name = "fart shoes"
-	icon_state = "clown"
-	slowdown = SHOES_SLOWDOWN+0.5
-	force = 0
-	var/footstep = 1	//used for squeeks whilst walking
-	species_restricted = null
-
-/obj/item/clothing/shoes/fart_shoes/handle_movement(var/turf/walking, var/running)
-	if(running)
-		if(footstep >= 2)
-			footstep = 0
-			playsound(src, "sound/effects/fart1.ogg", 60, 1) // this will get annoying very fast.
-		else
-			footstep++
-	else
-		playsound(src, "sound/effects/fart1.ogg", 20, 1)
-
 /obj/item/clothing/shoes/cult
 	name = "boots"
 	desc = "A pair of boots worn by the followers of Nar-Sie."
@@ -253,3 +234,25 @@
 	force = 0
 	drop_sound = 'sound/items/drop/clothing.ogg'
 	pickup_sound = 'sound/items/pickup/clothing.ogg'
+
+/*
+ * 80s
+ */
+
+/obj/item/clothing/shoes/sneakerspurple
+	name = "purple sneakers"
+	desc = "A stylish, expensive pair of purple sneakers."
+	icon_state = "sneakerspurple"
+	item_state = "sneakerspurple"
+
+/obj/item/clothing/shoes/sneakersblue
+	name = "blue sneakers"
+	desc = "A stylish, expensive pair of blue sneakers."
+	icon_state = "sneakersblue"
+	item_state = "sneakersblue"
+
+/obj/item/clothing/shoes/sneakersred
+	name = "red sneakers"
+	desc = "A stylish, expensive pair of red sneakers."
+	icon_state = "sneakersred"
+	item_state = "sneakersred"

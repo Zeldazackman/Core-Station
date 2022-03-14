@@ -20249,6 +20249,8 @@
 	},
 /obj/item/weapon/storage/pill_bottle/dice,
 /obj/item/weapon/storage/pill_bottle/dice_nerd,
+/obj/item/weapon/deck/wizoff,
+/obj/item/weapon/book/manual/wizzoffguide,
 /turf/simulated/floor/wood,
 /area/library)
 "aGZ" = (
@@ -23641,13 +23643,11 @@
 /turf/simulated/floor/plating,
 /area/bridge_hallway)
 "aNa" = (
-/obj/machinery/computer/shuttle_control/tether_backup{
-	req_one_access = list()
-	},
 /obj/effect/floor_decal/fancy_shuttle{
 	fancy_shuttle_tag = "lifeboat1";
 	name = "lifeboat1"
 	},
+/obj/machinery/computer/shuttle_control/tether_backup,
 /turf/simulated/floor/tiled,
 /area/shuttle/tether{
 	base_turf = /turf/simulated/floor/reinforced
@@ -31914,12 +31914,12 @@
 /area/hallway/lower/third_south)
 "bcu" = (
 /obj/structure/table/woodentable,
-/obj/item/weapon/storage/box/beanbags,
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel,
 /obj/item/weapon/paper{
 	info = "This permit signifies that the Bartender is permitted to posess this firearm in the bar, and ONLY the bar. Failure to adhere to this permit will result in confiscation of the weapon and possibly arrest.";
 	name = "Shotgun permit"
 	},
+/obj/item/ammo_magazine/ammo_box/b12g/beanbag,
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/bar_backroom)
 "bcv" = (
@@ -39250,9 +39250,11 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/power/smes/buildable/point_of_interest,
 /obj/structure/cable/green{
 	icon_state = "0-8"
+	},
+/obj/machinery/power/smes/buildable{
+	charge = 500000
 	},
 /turf/simulated/floor/tiled,
 /area/shuttle/tourbus/general)
