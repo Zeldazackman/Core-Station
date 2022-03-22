@@ -510,3 +510,13 @@
 /datum/trait/neutral/submit_to_prey/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..(S,H)
 	H.verbs |= /mob/living/proc/lend_prey_control
+
+/datum/trait/neutral/vent_crawler
+	name = "Vent Crawler"
+	desc = "Your body is fexible enough to somehow manage to clamber into a vent albeit at a slower pace than most things used to such tight environments."
+	cost = 0
+	custom_only = FALSE
+
+/datum/trait/neutral/vent_crawler/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..(S,H)
+	H.verbs |= /mob/living/proc/ventcrawl
