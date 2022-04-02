@@ -21,6 +21,7 @@
 	var/vore_egg_type = "egg" 			// Default egg type.
 	var/feral = 0 						// How feral the mob is, if at all. Does nothing for non xenochimera at the moment.
 	var/revive_ready = REVIVING_READY	// Only used for creatures that have the xenochimera regen ability, so far.
+	var/revive_finished = 0 // Only used for xenochimera regen, allows us to find out when the regen will finish.
 	var/metabolism = 0.0015
 	var/vore_taste = null				// What the character tastes like
 	var/vore_smell = null				// What the character smells like
@@ -38,6 +39,13 @@
 	var/adminbus_eat_minerals = FALSE	// This creature subsists on a diet of pure adminium.
 	var/vis_height = 32					// Sprite height used for resize features.
 	var/show_vore_fx = TRUE				// Show belly fullscreens
+	var/regen_sounds = list(
+		'sound/effects/mob_effects/xenochimera/regen_1.ogg',
+		'sound/effects/mob_effects/xenochimera/regen_2.ogg',
+		'sound/effects/mob_effects/xenochimera/regen_4.ogg',
+		'sound/effects/mob_effects/xenochimera/regen_3.ogg',
+		'sound/effects/mob_effects/xenochimera/regen_5.ogg'
+	)
 
 //
 // Hook for generic creation of stuff on new creatures
@@ -500,16 +508,15 @@
 		to_chat(user, "<span class='notice'>They aren't able to be devoured.</span>")
 		log_and_message_admins("[key_name_admin(src)] attempted to devour [key_name_admin(prey)] against their prefs ([prey ? ADMIN_JMP(prey) : "null"])")
 		return FALSE
-
+	// Slipnoms from chompstation downstream, credit to cadyn for the original PR.
 	// Prepare messages
-	//CHOMPEdit begin
 	if(prey.is_slipping)
 		attempt_msg = "<span class='warning'>It seems like [prey] is about to slide into [pred]'s [lowertext(belly.name)]!</span>"
 		success_msg = "<span class='warning'>[prey] suddenly slides into [pred]'s [lowertext(belly.name)]!</span>"
 	else if(pred.is_slipping)
 		attempt_msg = "<span class='warning'>It seems like [prey] is gonna end up inside [pred]'s [lowertext(belly.name)] as [pred] comes sliding over!</span>"
 		success_msg = "<span class='warning'>[prey] suddenly slips inside of [pred]'s [lowertext(belly.name)] as [pred] slides into them!</span>"
-	else if(user == pred) //CHOMPEdit End //Feeding someone to yourself
+	else if(user == pred) //Feeding someone to yourself
 		attempt_msg = "<span class='warning'>[pred] is attempting to [lowertext(belly.vore_verb)] [prey] into their [lowertext(belly.name)]!</span>"
 		success_msg = "<span class='warning'>[pred] manages to [lowertext(belly.vore_verb)] [prey] into their [lowertext(belly.name)]!</span>"
 	else //Feeding someone to another person
