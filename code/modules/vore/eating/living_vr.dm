@@ -5,9 +5,9 @@
 	var/feeding = TRUE					// Can the mob be vorishly force fed or fed to others?
 	var/absorbable = TRUE				// Are you allowed to absorb this person?
 	var/resizable = TRUE				// Can other people resize you? (Usually ignored for self-resizes)
-	var/digest_leave_remains = FALSE	// Will this mob leave bones/skull/etc after the melty demise?
+	var/digest_leave_remains = TRUE	// Will this mob leave bones/skull/etc after the melty demise?
 	var/allowmobvore = TRUE				// Will simplemobs attempt to eat the mob?
-	var/allow_inbelly_spawning = FALSE	// Will we even bother with attempts of someone to spawn in in one of our bellies?
+	var/allow_inbelly_spawning = TRUE	// Will we even bother with attempts of someone to spawn in in one of our bellies?
 	var/showvoreprefs = TRUE			// Determines if the mechanical vore preferences button will be displayed on the mob or not.
 	var/obj/belly/vore_selected			// Default to no vore capability.
 	var/list/vore_organs = list()		// List of vore containers inside a mob
@@ -21,7 +21,7 @@
 	var/vore_egg_type = "egg" 			// Default egg type.
 	var/feral = 0 						// How feral the mob is, if at all. Does nothing for non xenochimera at the moment.
 	var/revive_ready = REVIVING_READY	// Only used for creatures that have the xenochimera regen ability, so far.
-	var/revive_finished = 0				// Only used for xenochimera regen, allows us to find out when the regen will finish.
+	var/revive_finished = 0 // Only used for xenochimera regen, allows us to find out when the regen will finish.
 	var/metabolism = 0.0015
 	var/vore_taste = null				// What the character tastes like
 	var/vore_smell = null				// What the character smells like
@@ -31,14 +31,11 @@
 	var/drain_finalized = 0				// Determines if the succubus drain will be KO'd/absorbed. Can be toggled on at any time.
 	var/fuzzy = 0						// Preference toggle for sharp/fuzzy icon.
 	var/permit_healbelly = TRUE
-	var/stumble_vore = TRUE				//Enabled by default since you have to enable drop pred/prey to do this anyway
-	var/slip_vore = TRUE				//Enabled by default since you have to enable drop pred/prey to do this anyway
-	var/drop_vore = TRUE				//Enabled by default since you have to enable drop pred/prey to do this anyway
-	var/can_be_drop_prey = FALSE
-	var/can_be_drop_pred = FALSE
-	var/allow_spontaneous_tf = FALSE	// Obviously.
+	var/can_be_drop_prey = TRUE
+	var/can_be_drop_pred = TRUE			// Mobs are pred by default.
+	var/allow_spontaneous_tf = TRUE	// Obviously.
 	var/next_preyloop					// For Fancy sound internal loop
-	var/adminbus_trash = FALSE			// For abusing trash eater for event shenanigans.
+	var/adminbus_trash = TRUE			// For abusing trash eater for event shenanigans.
 	var/adminbus_eat_minerals = FALSE	// This creature subsists on a diet of pure adminium.
 	var/vis_height = 32					// Sprite height used for resize features.
 	var/show_vore_fx = TRUE				// Show belly fullscreens
@@ -241,9 +238,6 @@
 	P.allow_spontaneous_tf = src.allow_spontaneous_tf
 	P.step_mechanics_pref = src.step_mechanics_pref
 	P.pickup_pref = src.pickup_pref
-	P.drop_vore = src.drop_vore
-	P.slip_vore = src.slip_vore
-	P.stumble_vore = src.stumble_vore
 
 	var/list/serialized = list()
 	for(var/obj/belly/B as anything in src.vore_organs)
@@ -280,9 +274,6 @@
 	allow_spontaneous_tf = P.allow_spontaneous_tf
 	step_mechanics_pref = P.step_mechanics_pref
 	pickup_pref = P.pickup_pref
-	drop_vore = P.drop_vore
-	slip_vore = P.slip_vore
-	stumble_vore = P.stumble_vore
 
 	if(bellies)
 		release_vore_contents(silent = TRUE)
@@ -429,15 +420,13 @@
 			s.undo_prey_takeover(TRUE)
 			return
 		var/obj/belly/B = loc
-		var/confirm = tgui_alert(src, "You're in a mob. Don't use this as a trick to get out of hostile animals. This is for escaping from preference-breaking and if you're otherwise unable to escape from endo (pred AFK for a long time).", "Confirmation", list("Okay", "Cancel"))
+		var/confirm = tgui_alert(src, "You're in a mob. This is for escaping from preference-breaking and if you're otherwise unable to escape from endo (pred AFK for a long time).", "Confirmation", list("Okay", "Cancel"))
 		if(confirm != "Okay" || loc != B)
 			return
 		//Actual escaping
 		absorbed = FALSE	//Make sure we're not absorbed
 		muffled = FALSE		//Removes Muffling
 		forceMove(get_turf(src)) //Just move me up to the turf, let's not cascade through bellies, there's been a problem, let's just leave.
-		for(var/mob/living/simple_mob/SA in range(10))
-			SA.prey_excludes[src] = world.time
 		log_and_message_admins("[key_name(src)] used the OOC escape button to get out of [key_name(B.owner)] ([B.owner ? "<a href='?_src_=holder;adminplayerobservecoodjump=1;X=[B.owner.x];Y=[B.owner.y];Z=[B.owner.z]'>JMP</a>" : "null"])")
 
 		if(!ishuman(B.owner))
@@ -502,8 +491,6 @@
 	//Sanity
 	if(!user || !prey || !pred || !istype(belly) || !(belly in pred.vore_organs))
 		log_debug("[user] attempted to feed [prey] to [pred], via [belly ? lowertext(belly.name) : "*null*"] but it went wrong.")
-		return FALSE
-	if(pred == prey)
 		return FALSE
 
 	// The belly selected at the time of noms
@@ -589,7 +576,7 @@
 	var/air_type = /datum/gas_mixture/belly_air
 	if(istype(lifeform))	// If this doesn't succeed, then 'lifeform' is actually a bag or capture crystal with someone inside
 		air_type = lifeform.get_perfect_belly_air_type()		// Without any overrides/changes, its gonna be /datum/gas_mixture/belly_air
-
+	
 	var/air = new air_type(1000)
 	return air
 
@@ -767,6 +754,7 @@
 				to_chat(src, "<span class='notice'>You can taste the flavor of garbage and leftovers. Delicious?</span>")
 			else
 				to_chat(src, "<span class='notice'>You can taste the flavor of gluttonous waste of food.</span>")
+		//TFF 10/7/19 - Add custom flavour for collars for trash can trait.
 		else if (istype(I,/obj/item/clothing/accessory/collar))
 			visible_message("<span class='warning'>[src] demonstrates their voracious capabilities by swallowing [I] whole!</span>")
 			to_chat(src, "<span class='notice'>You can taste the submissiveness in the wearer of [I]!</span>")
@@ -948,9 +936,6 @@
 	dispvoreprefs += "<b>Healbelly permission:</b> [permit_healbelly ? "Allowed" : "Disallowed"]<br>"
 	dispvoreprefs += "<b>Spontaneous vore prey:</b> [can_be_drop_prey ? "Enabled" : "Disabled"]<br>"
 	dispvoreprefs += "<b>Spontaneous vore pred:</b> [can_be_drop_pred ? "Enabled" : "Disabled"]<br>"
-	dispvoreprefs += "<b>Drop Vore:</b> [drop_vore ? "Enabled" : "Disabled"]<br>"
-	dispvoreprefs += "<b>Slip Vore:</b> [slip_vore ? "Enabled" : "Disabled"]<br>"
-	dispvoreprefs += "<b>Stumble Vore:</b> [stumble_vore ? "Enabled" : "Disabled"]<br>"
 	dispvoreprefs += "<b>Inbelly Spawning:</b> [allow_inbelly_spawning ? "Allowed" : "Disallowed"]<br>"
 	dispvoreprefs += "<b>Spontaneous transformation:</b> [allow_spontaneous_tf ? "Enabled" : "Disabled"]<br>"
 	dispvoreprefs += "<b>Can be stepped on/over:</b> [step_mechanics_pref ? "Allowed" : "Disallowed"]<br>"
