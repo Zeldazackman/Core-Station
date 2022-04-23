@@ -101,7 +101,7 @@
 	icon_state = "alienpistol"
 	item_state = "alienpistol"
 	fire_delay = 10 // Handguns should be inferior to two-handed weapons. Even alien ones I suppose.
-	charge_cost = 480 // Five shots.
+	charge_cost = 240 // Ten shots.
 
 	projectile_type = /obj/item/projectile/beam/cyan
 	cell_type = /obj/item/weapon/cell/device/weapon/recharge/alien // Self charges.
@@ -218,13 +218,13 @@
 	projectile_type = /obj/item/projectile/beam/sniper
 	slot_flags = SLOT_BACK
 	action_button_name = "Use Scope"
-	battery_lock = 1
-	charge_cost = 600
-	fire_delay = 35
+	battery_lock = 0
+	charge_cost = 200
+	fire_delay = 10
 	force = 10
-	w_class = ITEMSIZE_HUGE // So it can't fit in a backpack.
+	w_class = ITEMSIZE_LARGE // So it can't fit in a backpack.
 	accuracy = -45 //shooting at the hip
-	scoped_accuracy = 50
+	scoped_accuracy = 95
 	one_handed_penalty = 60 // The weapon itself is heavy, and the long barrel makes it hard to hold steady with just one hand.
 
 /obj/item/weapon/gun/energy/sniperrifle/ui_action_click()
@@ -323,12 +323,12 @@
 	projectile_type = /obj/item/projectile/beam/sniper
 	slot_flags = SLOT_BACK
 	action_button_name = "Aim Down Sights"
-	charge_cost = 2400
-	fire_delay = 20
+	charge_cost = 200
+	fire_delay = 5
 	force = 8
 	w_class = ITEMSIZE_LARGE
-	accuracy = 10
-	scoped_accuracy = 15
+	accuracy = 90
+	scoped_accuracy = 75
 	charge_meter = FALSE
 	var/scope_multiplier = 1.5
 
@@ -349,7 +349,7 @@
 	antique mono-rifle design that was dubbed the 'Rainy Day Special' by many of its users."
 	icon_state = "cmono"
 	item_state = "cshotgun"
-	charge_cost = 1200
+	charge_cost = 400
 	force = 12
-	accuracy = 0
+	accuracy = 90
 	scoped_accuracy = 20
