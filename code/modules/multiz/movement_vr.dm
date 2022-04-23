@@ -38,13 +38,13 @@
 
 	var/mob/living/prey = src
 	var/fallloc = prey.loc
-	if(pred.can_be_drop_pred && prey.can_be_drop_prey)
+	if(pred.can_be_drop_pred && prey.can_be_drop_prey && pred.drop_vore && prey.drop_vore)
 		pred.feed_grabbed_to_self_falling_nom(pred,prey)
 		pred.loc = fallloc
 		if(!safe_fall)
 			pred.Weaken(2)
 		pred.visible_message("<span class='danger'>\The [pred] falls right onto \the [prey]!</span>")
-	else if(prey.can_be_drop_pred && pred.can_be_drop_prey)
+	else if(prey.can_be_drop_pred && pred.can_be_drop_prey && pred.drop_vore && prey.drop_vore)
 		prey.feed_grabbed_to_self_falling_nom(prey,pred)
 		pred.Weaken(2)
 		pred.visible_message("<span class='danger'>\The [pred] falls right into \the [prey]!</span>")
