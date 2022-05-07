@@ -60,10 +60,10 @@
 	B.vore_sound = "Tauric Swallow"
 	B.release_sound = "Pred Escape"
 	B.fancy_vore = 1
-	B.vore_verb = "greedly devour"
+	B.vore_verb = "greedily devour"
 	B.contamination_color = "yellow"
 	B.contamination_flavor = "Arcid"
-	B.belly_fullscreen = "a_tumby"
+	B.belly_fullscreen = "yet_another_tumby"
 
 /datum/say_list/catgirl
 	speak = list("Meow!","Esp!","Purr!","HSSSSS","Mew?","Nya~")
@@ -71,4 +71,4 @@
 	emote_see = list("shakes her head","shivers","stretches","grooms herself")
 
 /datum/ai_holder/simple_mob/passive/catgirl
-	base_wander_delay = 8
+	base_wander_delay = 6
