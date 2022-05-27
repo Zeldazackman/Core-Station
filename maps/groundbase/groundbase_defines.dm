@@ -210,16 +210,6 @@
 		list("Western Wilds 2")
 		)
 
-	ai_shell_restricted = TRUE
-	ai_shell_allowed_levels = list(
-		Z_LEVEL_GB_BOTTOM,
-		Z_LEVEL_GB_MIDDLE,
-		Z_LEVEL_GB_TOP,
-		Z_LEVEL_MISC,
-		Z_LEVEL_BEACH,
-		Z_LEVEL_AEROSTAT
-		)
-
 	planet_datums_to_make = list(
 		/datum/planet/virgo3b,
 		/datum/planet/virgo3c,
