@@ -147,12 +147,12 @@
 		"Their %belly looks larger than usual.")
 
 	var/item_digest_mode = IM_DIGEST_FOOD	// Current item-related mode from item_digest_modes
-	var/contaminates = FALSE					// Whether the belly will contaminate stuff
+	var/contaminates = TRUE					// Whether the belly will contaminate stuff
 	var/contamination_flavor = "Generic"	// Determines descriptions of contaminated items
 	var/contamination_color = "green"		// Color of contamination overlay
 
 	// Lets you do a fullscreen overlay. Set to an icon_state string.
-	var/belly_fullscreen = ""
+	var/belly_fullscreen = "yet_another_tumby"
 	var/disable_hud = FALSE
 
 //For serialization, keep this updated, required for bellies to save correctly.

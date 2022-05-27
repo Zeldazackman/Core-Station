@@ -127,7 +127,7 @@
 	B.vore_sound = "Tauric Swallow"
 	B.release_sound = "Pred Escape"
 	B.fancy_vore = 1
-	B.vore_verb = "greedly devour"
+	B.vore_verb = "greedily devour"
 	B.contamination_color = "red"
 	B.contamination_flavor = "Arcid"
 	B.belly_fullscreen = "yet_another_tumby"

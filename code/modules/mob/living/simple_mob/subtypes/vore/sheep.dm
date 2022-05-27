@@ -21,8 +21,8 @@
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
 
-	melee_damage_lower = 1
-	melee_damage_upper = 5
+	melee_damage_lower = 0
+	melee_damage_upper = 0
 	attacktext = list("kicked")
 	attack_sound = 'sound/voice/baa.ogg'
 
