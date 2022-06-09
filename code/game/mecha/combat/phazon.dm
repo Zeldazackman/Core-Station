@@ -5,9 +5,9 @@
 	initial_icon = "phazon"
 	step_in = 1
 	dir_in = 1 //Facing North.
-	step_energy_drain = 3
-	health = 200		//God this is low
-	maxhealth = 200		//Don't forget to update the /old variant if  you change this number.
+	step_energy_drain = 2
+	health = 300		//God this is low
+	maxhealth = 300		//Don't forget to update the /old variant if  you change this number.
 	deflect_chance = 30
 	damage_absorption = list("brute"=0.7,"fire"=0.7,"bullet"=0.7,"laser"=0.7,"energy"=0.7,"bomb"=0.7)
 	max_temperature = 25000
@@ -89,8 +89,8 @@
 	step_in = 1
 	dir_in = 1 //Facing North.
 	step_energy_drain = 3
-	health = 350
-	maxhealth = 350
+	health = 450
+	maxhealth = 450
 	deflect_chance = 30
 	damage_absorption = list("brute"=0.6,"fire"=0.7,"bullet"=0.7,"laser"=0.9,"energy"=0.7,"bomb"=0.5)
 	max_temperature = 10000
@@ -100,15 +100,15 @@
 	force = 20
 	phasing_energy_drain = 300
 
-	max_hull_equip = 2
-	max_weapon_equip = 1
-	max_utility_equip = 2
-	max_universal_equip = 2
-	max_special_equip = 2
+	max_hull_equip = 4
+	max_weapon_equip = 4
+	max_utility_equip = 4
+	max_universal_equip = 4
+	max_special_equip = 4
 
 	phasing_possible = TRUE
 	switch_dmg_type_possible = TRUE
-	cloak_possible = FALSE
+	cloak_possible = TRUE
 
 /obj/mecha/combat/phazon/janus/take_damage(amount, type="brute")
 	..()
