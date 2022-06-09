@@ -216,6 +216,9 @@
 /obj/item/mecha_parts/component/armor/alien
 	name = "strange mecha plating"
 	step_delay = 2
+	deflect_chance = 15
+	damage_minimum = 20
+	minimum_penetration = 25
 	damage_absorption = list(
 		"brute"=0.7,
 		"fire"=0.7,
