@@ -30,8 +30,8 @@
 
 	var/vore_default_mode = DM_HOLD	// Default bellymode (DM_DIGEST, DM_HOLD, DM_ABSORB)
 	var/vore_default_flags = 13			// No flags
-	var/vore_digest_chance = 25			// Chance to switch to digest mode if resisted
-	var/vore_absorb_chance = 0			// Chance to switch to absorb mode if resisted
+	var/vore_digest_chance = 15			// Chance to switch to digest mode if resisted
+	var/vore_absorb_chance = 5			// Chance to switch to absorb mode if resisted
 	var/vore_escape_chance = 25			// Chance of resisting out of mob
 
 	var/vore_stomach_name				// The name for the first belly if not "stomach"
