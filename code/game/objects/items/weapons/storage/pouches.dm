@@ -16,7 +16,7 @@
 	pocketable = TRUE
 
 	var/insert_delay = 0 SECONDS
-	var/remove_delay = 2 SECONDS
+	var/remove_delay = 0 SECONDS
 
 /obj/item/weapon/storage/pouch/stall_insertion(obj/item/W, mob/user)
 	// No delay if you have the pouch in your hands
