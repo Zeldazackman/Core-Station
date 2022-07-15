@@ -19,8 +19,8 @@
 #define ANNOUNCER_NAME "Facility PA"
 
 //For custom species
-#define STARTING_SPECIES_POINTS 2
-#define MAX_SPECIES_TRAITS 5
+#define STARTING_SPECIES_POINTS 7
+#define MAX_SPECIES_TRAITS 10
 
 // Xenochimera thing mostly
 #define REVIVING_NOW		-1
