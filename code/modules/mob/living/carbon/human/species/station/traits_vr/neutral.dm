@@ -540,7 +540,6 @@
 	..(S,H)
 	H.verbs |= /mob/living/proc/vertical_nom
 
-
 /datum/trait/neutral/micro_size_down
 	name = "Light Frame"
 	desc = "You are considered smaller than you are for micro interactions."
