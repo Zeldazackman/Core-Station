@@ -540,6 +540,7 @@
 	..(S,H)
 	H.verbs |= /mob/living/proc/vertical_nom
 
+
 /datum/trait/neutral/micro_size_down
 	name = "Light Frame"
 	desc = "You are considered smaller than you are for micro interactions."
@@ -581,3 +582,13 @@
 	cost = 0
 	custom_only = FALSE
 	var_changes = list("digestion_nutrition_modifier" = 0.25)
+
+/datum/trait/neutral/vent_crawler
+	name = "Vent Crawler"
+	desc = "Your body is fexible enough to somehow manage to clamber into a vent albeit at a slower pace than most things used to such tight environments."
+	cost = 0
+	custom_only = FALSE
+
+/datum/trait/neutral/vent_crawler/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..(S,H)
+	H.verbs |= /mob/living/proc/ventcrawl
