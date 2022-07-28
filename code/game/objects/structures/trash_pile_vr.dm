@@ -20,7 +20,6 @@
 	var/global/list/unique_gamma = list(
 		/obj/item/weapon/gun/projectile/pirate,
 		/obj/item/clothing/accessory/permit/gun,
-		/obj/item/weapon/gun/projectile/dartgun,
 		/obj/item/clothing/gloves/black/bloodletter
 		)
 
@@ -148,6 +147,15 @@
 					prob(3);/obj/item/weapon/storage/box/sinpockets,
 					prob(2);/obj/item/weapon/storage/secure/briefcase,
 					prob(4);/obj/item/clothing/under/fluff/latexmaid,
+					prob(2);/obj/item/toy/tennis,
+					prob(2);/obj/item/toy/tennis/red,
+					prob(2);/obj/item/toy/tennis/yellow,
+					prob(2);/obj/item/toy/tennis/green,
+					prob(2);/obj/item/toy/tennis/cyan,
+					prob(2);/obj/item/toy/tennis/blue,
+					prob(2);/obj/item/toy/tennis/purple,
+					prob(1);/obj/item/weapon/storage/box/brainzsnax,
+					prob(1);/obj/item/weapon/storage/box/brainzsnax/red,
 					prob(1);/obj/item/clothing/glasses/sunglasses,
 					prob(1);/obj/item/clothing/glasses/welding,
 					prob(1);/obj/item/clothing/head/ushanka,
@@ -181,6 +189,7 @@
 					prob(3);/obj/item/weapon/implanter/sizecontrol,
 					prob(3);/obj/item/weapon/handcuffs/fuzzy,
 					prob(2);/obj/item/weapon/handcuffs/legcuffs/fuzzy,
+					prob(3);/obj/item/clothing/gloves/heavy_engineer,
 					prob(2);/obj/item/weapon/storage/box/syndie_kit/spy,
 					prob(2);/obj/item/weapon/grenade/anti_photon,
 					prob(2);/obj/item/clothing/under/hyperfiber/bluespace,
@@ -196,9 +205,11 @@
 					prob(1);/obj/item/weapon/material/knife/tacknife,
 					prob(1);/obj/item/weapon/storage/box/survival/space,
 					prob(4);/obj/item/weapon/storage/secure/briefcase/trashmoney,
+					prob(4);/obj/item/device/survivalcapsule/popcabin,
 					prob(1);/obj/item/weapon/reagent_containers/syringe/steroid,
 					prob(3);/obj/item/device/perfect_tele,
-					prob(1);/obj/item/device/survivalcapsule/popcabin,
+					prob(4);/obj/item/capture_crystal,
+					prob(4);/obj/item/weapon/gun/projectile/dartgun,
 					prob(3);/obj/item/weapon/gun/energy/netgun)
 
 	var/obj/item/I = new path()
