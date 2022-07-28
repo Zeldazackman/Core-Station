@@ -210,6 +210,16 @@
 					prob(3);/obj/item/device/perfect_tele,
 					prob(4);/obj/item/capture_crystal,
 					prob(4);/obj/item/weapon/gun/projectile/dartgun,
+					prob(2);/obj/item/weapon/reagent_containers/pill/adminordrazine,
+					prob(2);/obj/item/weapon/storage/pill_bottle/adminordrazine,
+					prob(2);/obj/item/weapon/storage/pill_bottle/vermicetol,
+					prob(2);/obj/item/weapon/storage/pill_bottle/healing_nanites,
+					prob(2);/obj/item/weapon/storage/pill_bottle/combat,
+					prob(2);/obj/item/weapon/storage/pill_bottle/assorted,
+					prob(2);/obj/item/weapon/storage/box/syndie_kit/voidsuit,
+					prob(2);/obj/item/weapon/storage/box/syndie_kit/voidsuit/fire,
+					prob(2);/obj/item/weapon/storage/box/syndie_kit/combat_armor,
+					prob(2);/obj/item/weapon/storage/box/syndie_kit/combat_armor,
 					prob(3);/obj/item/weapon/gun/energy/netgun)
 
 	var/obj/item/I = new path()
