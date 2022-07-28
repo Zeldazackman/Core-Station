@@ -4185,4 +4185,5 @@
 #include "maps\submaps\surface_submaps\wilderness\wilderness_areas.dm"
 #include "maps\tether\tether.dm"
 #include "maps\~map_system\maps.dm"
+#include "modular_chomp\code\modules\mob\mob.dm"
 // END_INCLUDE
