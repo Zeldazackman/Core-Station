@@ -34,6 +34,7 @@
 #include "code\__defines\admin.dm"
 #include "code\__defines\admin_vr.dm"
 #include "code\__defines\appearance.dm"
+#include "code\__defines\arfs_defines.dm"
 #include "code\__defines\atmos.dm"
 #include "code\__defines\belly_modes_vr.dm"
 #include "code\__defines\callbacks.dm"
@@ -4187,5 +4188,10 @@
 #include "maps\submaps\surface_submaps\wilderness\wilderness_areas.dm"
 #include "maps\tether\tether.dm"
 #include "maps\~map_system\maps.dm"
+#include "modular_arfs\code\ghost_pods_arfs.dm"
+#include "modular_arfs\code\mob\lugia_vr.dm"
+#include "modular_arfs\code\mob\pokemon.dm"
+#include "modular_arfs\code\mob\pokemon_moves.dm"
+#include "modular_arfs\code\mob\pokemon_riding.dm"
 #include "modular_chomp\code\modules\mob\mob.dm"
 // END_INCLUDE
