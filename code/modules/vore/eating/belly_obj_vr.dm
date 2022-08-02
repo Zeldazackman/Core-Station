@@ -13,21 +13,21 @@
 //
 /obj/belly
 	name = "belly"							// Name of this location
-	desc = "It's a belly! You're in it!"	// Flavor text description of inside sight/sound/smells/feels.
+	desc = "Warm, wet, and slimy it's a belly and you've found yourself within it!"	// Flavor text description of inside sight/sound/smells/feels.
 	var/vore_sound = "Gulp"					// Sound when ingesting someone
 	var/vore_verb = "ingest"				// Verb for eating with this in messages
 	var/human_prey_swallow_time = 100		// Time in deciseconds to swallow /mob/living/carbon/human
 	var/nonhuman_prey_swallow_time = 30		// Time in deciseconds to swallow anything else
 	var/nutrition_percent = 100				// Nutritional percentage per tick in digestion mode
-	var/digest_brute = 0.5					// Brute damage per tick in digestion mode
-	var/digest_burn = 0.5					// Burn damage per tick in digestion mode
+	var/digest_brute = 1					// Brute damage per tick in digestion mode
+	var/digest_burn = 1.5					// Burn damage per tick in digestion mode
 	var/digest_oxy = 0						// Oxy damage per tick in digestion mode
 	var/immutable = FALSE					// Prevents this belly from being deleted
-	var/escapable = FALSE					// Belly can be resisted out of at any time
-	var/escapetime = 20 SECONDS				// Deciseconds, how long to escape this belly
-	var/digestchance = 0					// % Chance of stomach beginning to digest if prey struggles
-	var/absorbchance = 0					// % Chance of stomach beginning to absorb if prey struggles
-	var/escapechance = 0 					// % Chance of prey beginning to escape if prey struggles.
+	var/escapable = TRUE					// Belly can be resisted out of at any time
+	var/escapetime = 30 SECONDS				// Deciseconds, how long to escape this belly
+	var/digestchance = 5					// % Chance of stomach beginning to digest if prey struggles
+	var/absorbchance = 1					// % Chance of stomach beginning to absorb if prey struggles
+	var/escapechance = 15 					// % Chance of prey beginning to escape if prey struggles.
 	var/transferchance = 0 					// % Chance of prey being trasnsfered, goes from 0-100%
 	var/transferchance_secondary = 0 		// % Chance of prey being transfered to transferchance_secondary, also goes 0-100%
 	var/save_digest_mode = TRUE			// Whether this belly's digest mode persists across rounds
@@ -39,7 +39,7 @@
 	var/transferlocation					// Location that the prey is released if they struggle and get dropped off.
 	var/transferlocation_secondary			// Secondary location that prey is released to.
 	var/release_sound = "Splatter"			// Sound for letting someone out. Replaced from True/false
-	var/mode_flags = 0						// Stripping, numbing, etc.
+	var/mode_flags = 13						// Stripping, numbing, etc.
 	var/fancy_vore = FALSE					// Using the new sounds?
 	var/is_wet = TRUE						// Is this belly's insides made of slimy parts?
 	var/wet_loop = TRUE						// Does the belly have a fleshy loop playing?
@@ -50,7 +50,7 @@
 	var/emote_time = 60						// How long between stomach emotes at prey (in seconds)
 	var/emote_active = TRUE					// Are we even giving emotes out at all or not?
 	var/next_emote = 0						// When we're supposed to print our next emote, as a world.time
-	var/selective_preference = DM_DIGEST	// Which type of selective bellymode do we default to?
+	var/selective_preference = DM_DIGEST // Which type of selective bellymode do we default to?
 
 	// Generally just used by AI
 	var/autotransferchance = 0 				// % Chance of prey being autotransferred to transfer location
@@ -59,7 +59,7 @@
 
 	//I don't think we've ever altered these lists. making them static until someone actually overrides them somewhere.
 	//Actual full digest modes
-	var/tmp/static/list/digest_modes = list(DM_HOLD,DM_DIGEST,DM_ABSORB,DM_DRAIN,DM_SELECT,DM_UNABSORB,DM_HEAL,DM_SHRINK,DM_GROW,DM_SIZE_STEAL,DM_EGG)
+	var/tmp/static/list/digest_modes = list(DM_HOLD,DM_DIGEST,DM_ABSORB,DM_DRAIN,DM_SELECT,DM_UNABSORB,DM_HEAL,DM_SHRINK,DM_GROW,DM_SIZE_STEAL,DM_EGG,DM_NOISY)
 	//Digest mode addon flags
 	var/tmp/static/list/mode_flag_list = list("Numbing" = DM_FLAG_NUMBING, "Stripping" = DM_FLAG_STRIPPING, "Leave Remains" = DM_FLAG_LEAVEREMAINS, "Muffles" = DM_FLAG_THICKBELLY, "Affect Worn Items" = DM_FLAG_AFFECTWORN, "Jams Sensors" = DM_FLAG_JAMSENSORS, "Complete Absorb" = DM_FLAG_FORCEPSAY)
 	//Item related modes
@@ -149,12 +149,12 @@
 		"Their %belly looks larger than usual.")
 
 	var/item_digest_mode = IM_DIGEST_FOOD	// Current item-related mode from item_digest_modes
-	var/contaminates = FALSE					// Whether the belly will contaminate stuff
+	var/contaminates = TRUE					// Whether the belly will contaminate stuff
 	var/contamination_flavor = "Generic"	// Determines descriptions of contaminated items
 	var/contamination_color = "green"		// Color of contamination overlay
 
 	// Lets you do a fullscreen overlay. Set to an icon_state string.
-	var/belly_fullscreen = ""
+	var/belly_fullscreen = "yet_another_tumby"
 	var/disable_hud = FALSE
 
 //For serialization, keep this updated, required for bellies to save correctly.
@@ -510,7 +510,7 @@
 // This is useful in customization boxes and such. The delimiter right now is \n\n so
 // in message boxes, this looks nice and is easily delimited.
 /obj/belly/proc/get_messages(type, delim = "\n\n")
-	ASSERT(type == "smo" || type == "smi" || type == "asmo" || type == "asmi" || type == "dmo" || type == "dmp" || type == "amo" || type == "amp" || type == "uamo" || type == "uamp" || type == "em" || type == "ema" || type == "im_digest" || type == "im_hold" || type == "im_holdabsorbed" || type == "im_absorb" || type == "im_heal" || type == "im_drain" || type == "im_steal" || type == "im_egg" || type == "im_shrink" || type == "im_grow" || type == "im_unabsorb")
+	ASSERT(type == "smo" || type == "smi" || type == "asmo" || type == "asmi" || type == "dmo" || type == "dmp" || type == "amo" || type == "amp" || type == "uamo" || type == "uamp" || type == "em" || type == "ema" || type == "im_digest" || type == "im_hold" || type == "im_holdabsorbed" || type == "im_absorb" || type == "im_heal" || type == "im_drain" || type == "im_steal" || type == "im_egg" || type == "im_shrink" || type == "im_grow" || type == "im_unabsorb" || type == "im_noisy")
 
 	var/list/raw_messages
 	switch(type)
@@ -560,6 +560,8 @@
 			raw_messages = emote_lists[DM_GROW]
 		if("im_unabsorb")
 			raw_messages = emote_lists[DM_UNABSORB]
+		if("im_noisy")
+			raw_messages = emote_lists[DM_NOISY]
 	var/messages = null
 	if(raw_messages)
 		messages = raw_messages.Join(delim)
@@ -640,6 +642,8 @@
 			emote_lists[DM_GROW] = raw_list
 		if("im_unabsorb")
 			emote_lists[DM_UNABSORB] = raw_list
+		if("im_noisy")
+			emote_lists[DM_NOISY] = raw_list
 
 	return
 
@@ -972,7 +976,7 @@
 				return
 			transfer_contents(R, dest_belly)
 			return
-
+			
 		else if(prob(absorbchance) && digest_mode != DM_ABSORB) //After that, let's have it run the absorb chance.
 			to_chat(R, "<span class='warning'>In response to your struggling, \the [lowertext(name)] begins to cling more tightly...</span>")
 			to_chat(owner, "<span class='warning'>You feel your [lowertext(name)] start to cling onto its contents...</span>")
