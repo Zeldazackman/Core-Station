@@ -296,10 +296,16 @@
 	pixel_x = -32
 	default_pixel_x = -32
 	old_x = -32
-	health = 200
-	maxHealth = 200
+	health = 350
+	maxHealth = 350
 	meat_amount = 6
 	resting_heal_max = 4
+	can_be_drop_prey = 0
+	digestable = 0
+	devourable = 0
+	capture_crystal = 0
+	ghostjoin = 0
+	
 
 /mob/living/simple_mob/animal/passive/pokemon/leg/articuno
 	name = "Articuno"
@@ -320,8 +326,8 @@
 	mob_size = MOB_HUGE
 
 /mob/living/simple_mob/animal/passive/pokemon/leg/lugia/andy
-	health = 500
-	maxHealth = 500
+	health = 1500
+	maxHealth = 1500
 	vore_capacity = 2
 	size_multiplier = 2
 	default_pixel_y = 16
