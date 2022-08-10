@@ -512,14 +512,15 @@
 		playsound(src, 'sound/effects/capture-crystal-negative.ogg', 75, 1, -1)
 
 /obj/item/capture_crystal/basic
+	capture_chance_modifier = 5
 
 /obj/item/capture_crystal/great
 	name = "great capture crystal"
-	capture_chance_modifier = 1.5
+	capture_chance_modifier = 10
 
 /obj/item/capture_crystal/ultra
 	name = "ultra capture crystal"
-	capture_chance_modifier = 2
+	capture_chance_modifier = 20
 
 /obj/item/capture_crystal/master
 	name = "master capture crystal"
