@@ -7,6 +7,7 @@
 	pickup_sound = 'sound/items/pickup/ring.ogg'
 	throwforce = 0
 	force = 0
+	w_class = ITEMSIZE_SMALL
 	action_button_name = "Command"
 
 	var/active = FALSE					//Is it set up?
