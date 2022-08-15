@@ -48,10 +48,12 @@
 	robot_modules["Sci-borg"] = /obj/item/weapon/robot_module/robot/science
 	robot_modules["Pupdozer"] = /obj/item/weapon/robot_module/robot/engiedog
 	robot_modules["Service-Hound"] = /obj/item/weapon/robot_module/robot/clerical/brodog
+	robot_modules["Honk-Hound"] = /obj/item/weapon/robot_module/robot/clerical/honkborg
 	robot_modules["BoozeHound"] = /obj/item/weapon/robot_module/robot/booze
 	robot_modules["KMine"] = /obj/item/weapon/robot_module/robot/kmine
 	robot_modules["Stray"] = /obj/item/weapon/robot_module/robot/stray
 	robot_modules["TraumaHound"] = /obj/item/weapon/robot_module/robot/medical/trauma
+	robot_modules["Honk-Hound"] = /obj/item/weapon/robot_module/robot/clerical/honkborg //CHOMP Addition Honk
 	return 1
 
 //Just add a new proc with the robot_module type if you wish to run some other vore code
@@ -271,27 +273,20 @@
 	src.modules += new /obj/item/device/dogborg/boop_module(src) //Boop the crew.
 	src.modules += new /obj/item/device/healthanalyzer(src) // See who's hurt specificially.
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src) //In case the chemist is nice!
-	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)//For holding the chemicals when the chemist is nice, made it the large variant in 2022
+	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker(src)//For holding the chemicals when the chemist is nice
 	src.modules += new /obj/item/device/sleevemate(src) //Lets them scan people.
 	src.modules += new /obj/item/weapon/shockpaddles/robot/hound(src) //Paws of life
 	src.modules += new /obj/item/weapon/inflatable_dispenser/robot(src) //This is kinda important for rescuing people without making it worse for everyone
-	src.modules += new /obj/item/weapon/gripper/medical(src) //Let them do literally anything in medbay other than patch external damage and lick people
-	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src) //dropper is nice to have for so much actually
 	src.emag 	 = new /obj/item/weapon/dogborg/pounce(src) //Pounce
 
-	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
+	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(2000)
 	synths += medicine
 
 	var/obj/item/stack/medical/advanced/clotting/C = new (src)
-	var/obj/item/stack/medical/splint/S = new /obj/item/stack/medical/splint(src)
 	C.uses_charge = 1
-	C.charge_costs = list(5000)
+	C.charge_costs = list(1000)
 	C.synths = list(medicine)
-	S.uses_charge = 1
-	S.charge_costs = list(1000)
-	S.synths = list(medicine)
 	src.modules += C
-	src.modules += S
 
 	var/datum/matter_synth/water = new /datum/matter_synth(500)
 	water.name = "Water reserves"
@@ -561,15 +556,7 @@
 	//Added a circuit gripper
 	src.modules += new /obj/item/weapon/gripper/circuit(src)
 	src.modules += new /obj/item/weapon/gripper/no_use/organ/robotics(src)
-	//src.modules += new /obj/item/weapon/surgical/scalpel/cyborg(src) //these are on the normal one, but do not appear to have a purpose other than borging
-	//src.modules += new /obj/item/weapon/surgical/circular_saw/cyborg(src) //so I am leaving them here but commented out because robotics no do the borging w/o medical
-	src.modules += new /obj/item/weapon/portable_destructive_analyzer(src) //destructive analyzer option for pref respect while also being able to do job
 	src.modules += new /obj/item/weapon/gripper/no_use/mech(src)
-	src.modules += new /obj/item/weapon/shockpaddles/robot/jumper(src) //unkilling synths may be important actually
-	src.modules += new /obj/item/weapon/melee/baton/slime/robot(src) //save the xenobio from themselves
-	src.modules += new /obj/item/weapon/gun/energy/taser/xeno/robot(src) //save the xenobio from themselves from a distance
-	src.modules += new /obj/item/device/xenoarch_multi_tool(src) //go find fancy rock
-	src.modules += new /obj/item/weapon/pickaxe/excavationdrill(src) //go get fancy rock
 	src.emag = new /obj/item/weapon/hand_tele(src)
 
 	var/datum/matter_synth/water = new /datum/matter_synth(500)
@@ -661,27 +648,27 @@
 	//Painfully slow charger regen but high capacity. Also starts with low amount.
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal()
 	metal.name = "Steel reserves"
-	metal.recharge_rate = 500
+	metal.recharge_rate = 100
 	metal.max_energy = 50000
 	metal.energy = 10000
 	var/datum/matter_synth/glass = new /datum/matter_synth/glass()
 	glass.name = "Glass reserves"
-	glass.recharge_rate = 500
+	glass.recharge_rate = 100
 	glass.max_energy = 50000
 	glass.energy = 10000
 	var/datum/matter_synth/wood = new /datum/matter_synth/wood()
 	wood.name = "Wood reserves"
-	wood.recharge_rate = 500
+	wood.recharge_rate = 100
 	wood.max_energy = 50000
 	wood.energy = 10000
 	var/datum/matter_synth/plastic = new /datum/matter_synth/plastic()
 	plastic.name = "Plastic reserves"
-	plastic.recharge_rate = 500
+	plastic.recharge_rate = 100
 	plastic.max_energy = 50000
 	plastic.energy = 10000
 	var/datum/matter_synth/plasteel = new /datum/matter_synth/plasteel()
 	plasteel.name = "Plasteel reserves"// Adding plasteel synthesizer to move in-line with Engiborg.
-	plasteel.recharge_rate = 250
+	plasteel.recharge_rate = 100
 	plasteel.max_energy = 20000
 	plasteel.energy = 10000
 	var/datum/matter_synth/water = new /datum/matter_synth(500)
@@ -996,3 +983,72 @@
 	if(src.emag)
 		var/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer/B = src.emag
 		B.reagents.add_reagent("beer2", 2 * amount)
+
+
+/obj/item/weapon/robot_module/robot/clerical/honkborg
+	name = "honk-hound module"
+	sprites = list(
+					"Honkborg" = "honkborg"
+					)
+	channels = list("Service" = 1,
+					"Entertainment" = 1)
+	pto_type = PTO_CIVILIAN
+	can_be_pushed = 0
+
+
+/obj/item/weapon/robot_module/robot/clerical/honkborg/New(var/mob/living/silicon/robot/R)
+	src.modules += new /obj/item/weapon/gripper/service(src)
+	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src)
+	src.modules += new /obj/item/weapon/material/minihoe(src)
+	src.modules += new /obj/item/device/analyzer/plant_analyzer(src)
+	src.modules += new /obj/item/weapon/storage/bag/dogborg(src)
+	src.modules += new /obj/item/weapon/robot_harvester(src)
+	src.modules += new /obj/item/device/multitool(src)
+	src.modules += new /obj/item/weapon/dogborg/jaws/small(src)
+	src.modules += new /obj/item/device/dogborg/boop_module(src)
+	src.modules += new /obj/item/weapon/dogborg/pounce(src)
+	src.modules += new /obj/item/weapon/bikehorn(src)
+	src.modules += new /obj/item/weapon/gun/launcher/confetti_cannon/honkborg(src)
+
+	var/datum/matter_synth/water = new /datum/matter_synth(500)
+	water.name = "Water reserves"
+	water.recharge_rate = 10
+	R.water_res = water
+	synths += water
+
+	var/obj/item/device/dogborg/tongue/T = new /obj/item/device/dogborg/tongue(src)
+	T.water = water
+	src.modules += T
+
+	var/obj/item/weapon/rsf/M = new /obj/item/weapon/rsf(src)
+	M.stored_matter = 30
+	src.modules += M
+
+	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
+
+	var/obj/item/weapon/flame/lighter/zippo/L = new /obj/item/weapon/flame/lighter/zippo(src)
+	L.lit = 1
+	src.modules += L
+
+	src.modules += new /obj/item/weapon/tray/robotray(src)
+	src.modules += new /obj/item/weapon/reagent_containers/borghypo/service(src)
+
+	var/obj/item/device/dogborg/sleeper/compactor/honkborg/B = new /obj/item/device/dogborg/sleeper/compactor/honkborg(src)
+	B.water = water
+	src.modules += B
+
+	R.icon 		 = 'icons/mob/widerobot_ch.dmi'
+	R.wideborg_dept  = 'icons/mob/widerobot_ch.dmi'
+	R.hands.icon = 'icons/mob/screen1_robot_vr.dmi'
+	R.ui_style_vr = TRUE
+	R.pixel_x 	 = -16
+	R.old_x 	 = -16
+	R.default_pixel_x = -16
+	R.dogborg = TRUE
+	R.wideborg = TRUE
+	R.verbs |= /mob/living/silicon/robot/proc/ex_reserve_refill
+	R.verbs |= /mob/living/silicon/robot/proc/robot_mount
+	R.verbs |= /mob/living/proc/toggle_rider_reins
+	R.verbs |= /mob/living/proc/shred_limb
+	R.verbs |= /mob/living/silicon/robot/proc/rest_style
+	..()
