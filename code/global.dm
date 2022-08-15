@@ -139,7 +139,7 @@ var/list/robot_module_types = list(
 	"Standard", "Engineering", "Surgeon",  "Crisis",
 	"Miner",    "Janitor",     "Service",      "Clerical", "Security",
 	"Research", "Medihound", "K9", "Janihound", "Sci-borg", "Pupdozer",
-	"Service-Hound", "BoozeHound", "KMine", "Honk-Hound"
+	"Service-Hound", "BoozeHound", "KMine", "TraumaHound"
 )
 // List of modules added during code red
 var/list/emergency_module_types = list(
@@ -147,16 +147,12 @@ var/list/emergency_module_types = list(
 )
 // List of modules available to AI shells
 var/list/shell_module_types = list(
-	"Standard", "Engineering", "Surgeon",  "Crisis",
-	"Miner",    "Janitor",     "Service",      "Clerical", "Security",
-	"Research", "Medihound", "K9", "Janihound", "Sci-borg", "Pupdozer",
-	"Service-Hound", "BoozeHound", "KMine", "Honk-Hound"
+	"Standard", "Service", "Clerical", "Service-Hound", "BoozeHound"
 )
 // List of whitelisted modules
 var/list/whitelisted_module_types = list(
-
+	"Lost", "Stray"
 )
-
 
 // Some scary sounds.
 var/static/list/scarySounds = list(
