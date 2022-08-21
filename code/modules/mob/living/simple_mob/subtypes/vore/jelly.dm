@@ -35,10 +35,10 @@
 	vore_active = 1
 	vore_pounce_chance = 10
 	vore_icons = SA_ICON_LIVING
-	vore_default_mode = DM_DIGEST
+	vore_default_mode = DM_DRAIN
 	vore_default_contamination_flavor = "Arcid"
 	vore_default_contamination_color = "yellow"
-	vore_default_item_mode = IM_DIGEST
+	vore_default_item_mode = IM_Hold
 	swallowTime = 2 SECONDS // Hungry little bastards.
 
 /mob/living/simple_mob/animal/space/jelly/init_vore()
@@ -52,10 +52,10 @@
 	B.fancy_vore = 1
 	B.vore_verb = "engulf"
 	B.digest_brute = 1
-	B.digest_burn = 3
-	B.digestchance = 20
+	B.digest_burn = 2
+	B.digestchance = 15
 	B.absorbchance = 5
-	B.escapechance = 15
+	B.escapechance = 25
 	B.belly_fullscreen = "acid"
 
 /datum/say_list/jelly
@@ -63,7 +63,7 @@
 	emote_see = list("undulates quietly")
 
 /datum/ai_holder/simple_mob/retaliate/jelly
-	speak_chance = 2
+	speak_chance = 8
 
 // Talon's Pet, Wiggleblob!
 /mob/living/simple_mob/animal/space/jelly/wiggleblob
