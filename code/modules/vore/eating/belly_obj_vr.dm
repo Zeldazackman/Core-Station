@@ -23,6 +23,8 @@
 	var/digest_brute = 1					// Brute damage per tick in digestion mode
 	var/digest_burn = 1.5					// Burn damage per tick in digestion mode
 	var/digest_oxy = 0						// Oxy damage per tick in digestion mode
+	var/digest_tox = 0						// Toxins damage per tick in digestion mode
+	var/digest_clone = 0					// Clone damage per tick in digestion mode
 	var/immutable = FALSE					// Prevents this belly from being deleted
 	var/escapable = TRUE					// Belly can be resisted out of at any time
 	var/escapetime = 30 SECONDS				// Deciseconds, how long to escape this belly
@@ -174,6 +176,8 @@
 	"digest_brute",
 	"digest_burn",
 	"digest_oxy",
+	"digest_tox",
+	"digest_clone",
 	"immutable",
 	"can_taste",
 	"escapable",
@@ -1110,6 +1114,8 @@
 	dupe.digest_brute = digest_brute
 	dupe.digest_burn = digest_burn
 	dupe.digest_oxy = digest_oxy
+	dupe.digest_tox = digest_tox
+	dupe.digest_clone = digest_clone
 	dupe.immutable = immutable
 	dupe.can_taste = can_taste
 	dupe.escapable = escapable
