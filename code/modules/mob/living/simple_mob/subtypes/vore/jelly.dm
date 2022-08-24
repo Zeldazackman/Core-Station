@@ -38,7 +38,7 @@
 	vore_default_mode = DM_DRAIN
 	vore_default_contamination_flavor = "Arcid"
 	vore_default_contamination_color = "yellow"
-	vore_default_item_mode = IM_Hold
+	vore_default_item_mode = IM_HOLD
 	swallowTime = 2 SECONDS // Hungry little bastards.
 
 /mob/living/simple_mob/animal/space/jelly/init_vore()
