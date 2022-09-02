@@ -4199,5 +4199,6 @@
 #include "modular_arfs\code\mob\pokemon.dm"
 #include "modular_arfs\code\mob\pokemon_moves.dm"
 #include "modular_arfs\code\mob\pokemon_riding.dm"
+#include "modular_core\code\custom_clothes_cr.dm"
 #include "modular_chomp\code\modules\mob\mob.dm"
 // END_INCLUDE
