@@ -3,7 +3,6 @@
 	desc = "A difficult-to-produce thickening of the dermis and skeletal structure, allowing a user to absorb more external trauma from physical sources."
 	list_pos = NIF_BRUTEARMOR
 	cost = 3200
-	p_drain = 0.05
 	illegal = TRUE
 	wear = 3
 	access = 999 //Prevents anyone from buying it without an emag.
@@ -14,7 +13,6 @@
 	desc = "A thin layer of material under the skin provides heat disappation for burns, reducing the trauma from lasers and fire. Not effective against ongoing environmental heat."
 	list_pos = NIF_BURNARMOR
 	cost = 3200
-	p_drain = 0.05
 	illegal = TRUE
 	wear = 3
 	access = 999 //Prevents anyone from buying it without an emag.
@@ -42,7 +40,6 @@
 	desc = "Generates monofilament wires from one's fingertips, allowing one to slash through almost any armor with relative ease. The monofilaments need to be replaced constantly, though, which does use power."
 	list_pos = NIF_HARDCLAWS
 	cost = 2200
-	a_drain = 0.5
 	illegal = TRUE
 	wear = 4
 	access = 999 //Prevents anyone from buying it without an emag.
