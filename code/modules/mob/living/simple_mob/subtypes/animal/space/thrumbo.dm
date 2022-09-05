@@ -25,7 +25,7 @@
 	attack_sharp = TRUE //It is a pretty sharp horn.
 	attack_edge = TRUE
 	meat_amount = 20
-	meat_type = /obj/item/reagent_containers/food/snacks/horsemeat
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
 	butchery_loot = list(/obj/item/stack/animalhide = 6)
 
 	ai_holder_type = /datum/ai_holder/simple_mob/horing
@@ -60,7 +60,7 @@
 	if(!chargeturf)
 		return
 	var/chargedir = get_dir(src, chargeturf)
-	setDir(chargedir)
+	set_dir(chargedir)
 	var/turf/T = get_ranged_target_turf(chargeturf, chargedir, isDiagonal(chargedir) ? 1 : 2)
 	if(!T)
 		charging = 0
@@ -225,6 +225,6 @@
 			set_stance(STANCE_IDLE)
 			holder.visible_emote("<span class='notice'>calms down, lowering its horn</span>")
 			if(holder.say_list)
-				holder.ISay(SAFEPICK(holder.say_list.say_stand_down))
+				holder.ISay(safepick(holder.say_list.say_stand_down))
 				playsound(holder, holder.say_list.stand_down_sound, 50, 1) // We do this twice to make the sound -very- noticable to the target.
 				playsound(target, holder.say_list.stand_down_sound, 50, 1) // Actual aim-mode also does that so at least it's consistant.
