@@ -14,8 +14,6 @@
 	health = 150
 	maxHealth = 150
 
-
-	density = 0
 	movement_cooldown = 0.75 //roughly a bit faster than a person due to their skittish nature
 	see_in_dark = 6
 
@@ -73,7 +71,7 @@
 	vore_bump_emote = "meekly engulf"
 	vore_icons = 0
 	vore_pounce_chance = 35
-	vore_pounce_maxhealth = 90
+	vore_pounce_maxhealth = 100
 	vore_standing_too = 1 // no need to graze
 
 	vore_default_mode = DM_HOLD
