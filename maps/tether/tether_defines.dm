@@ -70,7 +70,7 @@
 		Z_LEVEL_SURFACE_HIGH,
 		Z_LEVEL_SPACE_LOW))
 
-	station_name  = "EU Vore Core"
+	station_name  = "Core Station"
 	station_short = "Tether"
 	facility_type = "station"
 	dock_name     = "Virgo-3B Colony"
@@ -253,7 +253,7 @@
 [i]Transponder[/i]: Transmitting (CIV), NanoTrasen IFF
 [b]Notice[/b]: NanoTrasen Base, authorized personnel only"}
 	base = 1
-	
+
 	icon = 'icons/obj/overmap_vr.dmi'
 	icon_state = "virgo3b"
 
@@ -315,7 +315,7 @@
 /obj/effect/overmap/visitable/sector/virgo3b/generate_skybox(zlevel)
 	var/static/image/bigone = image(icon = 'icons/skybox/virgo3b.dmi', icon_state = "large")
 	var/static/image/smallone = image(icon = 'icons/skybox/virgo3b.dmi', icon_state = "small")
-	
+
 	if(zlevel == Z_LEVEL_TRANSIT)
 		return bigone
 	else
