@@ -140,7 +140,7 @@
 					N.gender = H.gender
 					N.identifying_gender = H.identifying_gender
 				else
-					new_mob.gender = H.identifying_gender
+					new_mob.gender = H.gender
 			else
 				new_mob.gender = M.gender
 				if(ishuman(new_mob))
@@ -232,6 +232,7 @@
 	new_mob.noisy = noisy
 	new_mob.selective_preference = selective_preference
 	new_mob.appendage_color = appendage_color
+	new_mob.appendage_alt_setting = appendage_alt_setting
 	new_mob.drop_vore = drop_vore
 	new_mob.stumble_vore = stumble_vore
 	new_mob.slip_vore = slip_vore
