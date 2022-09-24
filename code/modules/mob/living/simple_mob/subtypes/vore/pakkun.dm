@@ -41,6 +41,8 @@
 
 	var/extra_posessive = FALSE					// Enable if you want their tummy hugs to be inescapable
 
+	var/extra_posessive = FALSE					// Enable if you want their tummy hugs to be inescapable
+
 /datum/ai_holder/simple_mob/ranged/pakkun
 	pointblank = TRUE
 	var/recent_target = null

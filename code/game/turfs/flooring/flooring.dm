@@ -422,7 +422,7 @@ var/list/flooring_types
 
 /decl/flooring/linoleum
 	name = "linoleum"
-	desc = "It's like the 2390's all over again."
+	desc = "It's like the 2090's all over again."		// VOREStation Lore Edit - we're not past 2390's yet
 	icon = 'icons/turf/flooring/linoleum.dmi'
 	icon_base = "lino"
 	can_paint = 1
@@ -604,3 +604,13 @@ var/list/flooring_types
 		'sound/effects/footstep/lava1.ogg',
 		'sound/effects/footstep/lava2.ogg',
 		'sound/effects/footstep/lava3.ogg'))
+
+/decl/flooring/concrete
+	name = "concrete"
+	desc = "A flat area of concrete flooring."
+	icon = 'icons/turf/concrete.dmi'
+	icon_base = "concrete"
+	is_plating = FALSE 	//VOREStation edit. It's a lot cooler if it's actual tile.
+	can_paint = 1		//VOREStation edit. Let's allow for some fun.
+	can_engrave = 1		//VOREStation edit. Fun.
+	flags = TURF_ACID_IMMUNE | TURF_CAN_BREAK | TURF_REMOVE_CROWBAR
