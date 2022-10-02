@@ -20,6 +20,7 @@
 	icon_dead = "pakkun-dead"
 	icon_living = "pakkun"
 	icon_state = "pakkun"
+	icon_rest = "pakkun-rest"
 	icon = 'icons/mob/vore.dmi'
 
 	faction = "pakkun"
@@ -46,11 +47,52 @@
 	projectilesound = 'sound/effects/slime_squish.ogg'
 
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/pakkun
+	vore_default_mode = DM_SELECT
 	var/view_range = 4
 
 	var/extra_posessive = FALSE					// Enable if you want their tummy hugs to be inescapable
+	var/autorest_cooldown = 100
 
-	var/extra_posessive = FALSE					// Enable if you want their tummy hugs to be inescapable
+/mob/living/simple_mob/vore/pakkun/Life()
+	. = ..()
+	if(client)
+		return
+	if(!ai_holder)
+		return
+
+	if(autorest_cooldown)
+		autorest_cooldown --
+	else if(prob(5) && ai_holder.stance == STANCE_IDLE)
+		autorest_cooldown = rand(50,200)
+		lay_down()
+
+/mob/living/simple_mob/vore/pakkun/lay_down()
+	. = ..()
+	if(client)
+		return
+	if(!ai_holder)
+		return
+
+	if(resting)
+		vore_selected.digest_mode = DM_UNABSORB
+		ai_holder.go_sleep()
+
+	else
+		vore_selected.digest_mode = vore_default_mode
+		ai_holder.go_wake()
+
+/mob/living/simple_mob/vore/pakkun/attack_hand(mob/user)
+	if(stat == DEAD)
+		return ..()
+	if(user.a_intent != I_HELP)
+		return ..()
+	if(resting)
+		playsound(src, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		user.visible_message("<span class='notice'>\The [user] shakes \the [src] awake.</span>","<span class='notice'>You shake \the [src] awake!</span>")
+		lay_down()
+		return
+	else
+		return ..()
 
 /datum/ai_holder/simple_mob/ranged/pakkun
 	pointblank = TRUE
@@ -124,6 +166,7 @@
 	icon_dead = "snapdragon-dead"
 	icon_living = "snapdragon"
 	icon_state = "snapdragon"
+	icon_rest = "snapdragon-rest"
 
 	extra_posessive = TRUE //you're gonna get KEPT, at least the first time you go in
 	maxHealth = 100
@@ -141,8 +184,10 @@
 	icon_dead = "snappy-dead"
 	icon_living = "snappy"
 	icon_state = "snappy"
+	icon_rest = "snappy-rest"
 
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/pakkun/snappy
+	vore_default_mode = DM_HOLD
 	var/list/petters = list()
 
 /datum/ai_holder/simple_mob/ranged/pakkun/snappy/list_targets()
