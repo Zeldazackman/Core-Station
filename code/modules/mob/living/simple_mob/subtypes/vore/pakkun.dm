@@ -48,7 +48,6 @@
 
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/pakkun
 	vore_default_mode = DM_SELECT
-	var/view_range = 4
 
 	var/extra_posessive = FALSE					// Enable if you want their tummy hugs to be inescapable
 	var/autorest_cooldown = 100
@@ -220,4 +219,3 @@
 	most of her girth. Your movements are rewarded only with squeezing from outside, the skin of the reptile easily stretching out to match your movements no matter how hard you try to push. If anything, \
 	wriggling about just seems to prompt the playful creature to mess with you more, mooshing her paws into the bulges you make, wrapping both arms around you and squeezing you tight, making it absolutely \
 	plain that she's more than happy to just keep you in there - and is more than capable of doing so if she so chooses."
-
