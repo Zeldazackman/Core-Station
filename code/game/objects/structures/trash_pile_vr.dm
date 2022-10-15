@@ -263,6 +263,7 @@
 					prob(2);/obj/item/weapon/storage/box/syndie_kit/voidsuit/fire,
 					prob(2);/obj/item/weapon/storage/box/syndie_kit/combat_armor,
 					prob(2);/obj/item/weapon/inducer/hybrid,
+					prob(2);/obj/item/weapon/implanter/compliance,
 					prob(3);/obj/item/weapon/gun/energy/netgun)
 
 	var/obj/item/I = new path()
