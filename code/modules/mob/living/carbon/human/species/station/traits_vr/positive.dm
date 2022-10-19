@@ -4,25 +4,25 @@
 /datum/trait/positive/speed_fast
 	name = "Haste"
 	desc = "Allows you to move faster on average than baseline."
-	cost = 1
+	cost = 0
 	var_changes = list("slowdown" = -0.6)
 
 /datum/trait/positive/hardy
 	name = "Hardy"
 	desc = "Allows you to carry heavy equipment with less slowdown."
-	cost = 1
+	cost = 0
 	var_changes = list("item_slowdown_mod" = 0.25)
 
 /datum/trait/positive/hardy_plus
 	name = "Hardy, Major"
 	desc = "Allows you to carry heavy equipment with almost no slowdown."
-	cost = 1
+	cost = 0
 	var_changes = list("item_slowdown_mod" = 0.1)
 
 /datum/trait/positive/endurance_high
 	name = "High Endurance"
 	desc = "Increases your maximum total hitpoints to 125"
-	cost = 1
+	cost = 0
 	var_changes = list("total_health" = 125)
 
 /datum/trait/positive/endurance_high/apply(var/datum/species/S,var/mob/living/carbon/human/H)
@@ -32,31 +32,31 @@
 /datum/trait/positive/nonconductive
 	name = "Non-Conductive"
 	desc = "Decreases your susceptibility to electric shocks by a 50% amount."
-	cost = 1 //This effects tasers!
+	cost = 0 //This effects tasers!
 	var_changes = list("siemens_coefficient" = 0.5)
 
 /datum/trait/positive/nonconductive_plus
 	name = "Non-Conductive, Major"
 	desc = "Decreases your susceptibility to electric shocks by a 75% amount."
-	cost = 2 //Let us not forget this effects tasers!
+	cost = 0 //Let us not forget this effects tasers!
 	var_changes = list("siemens_coefficient" = 0.25)
 
 /datum/trait/positive/darksight
 	name = "Darksight"
 	desc = "Allows you to see a short distance in the dark."
-	cost = 1
+	cost = 0
 	var_changes = list("darksight" = 5, "flash_mod" = 2.0)
 
 /datum/trait/positive/darksight_plus
 	name = "Darksight, Major"
 	desc = "Allows you to see in the dark for the whole screen."
-	cost = 1
+	cost = 0
 	var_changes = list("darksight" = 8, "flash_mod" = 3.0)
 
 /datum/trait/positive/melee_attack
 	name = "Special Attack: Sharp Melee" // Trait Organization for easier browsing. TODO: Proper categorization of 'health/ability/resist/etc'
 	desc = "Provides sharp melee attacks that do slightly more damage."
-	cost = 1
+	cost = 0
 	var_changes = list("unarmed_types" = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/bite/sharp))
 
 /datum/trait/positive/melee_attack_fangs
@@ -74,26 +74,26 @@
 /datum/trait/positive/minor_brute_resist
 	name = "Brute Resist, Minor"
 	desc = "Adds 25% resistance to brute damage sources."
-	cost = 1
+	cost = 0
 	var_changes = list("brute_mod" = 0.75)
 
 /datum/trait/positive/brute_resist
 	name = "Brute Resist"
 	desc = "Adds 40% resistance to brute damage sources."
-	cost = 1
+	cost = 0
 	var_changes = list("brute_mod" = 0.60)
 	excludes = list(/datum/trait/positive/minor_burn_resist,/datum/trait/positive/burn_resist)
 
 /datum/trait/positive/minor_burn_resist
 	name = "Burn Resist, Minor"
 	desc = "Adds 25% resistance to burn damage sources."
-	cost = 1
+	cost = 0
 	var_changes = list("burn_mod" = 0.75)
 
 /datum/trait/positive/burn_resist
 	name = "Burn Resist"
 	desc = "Adds 40% resistance to burn damage sources."
-	cost = 1
+	cost = 0
 	var_changes = list("burn_mod" = 0.60)
 	excludes = list(/datum/trait/positive/minor_brute_resist,/datum/trait/positive/brute_resist)
 
@@ -197,7 +197,7 @@
 /datum/trait/positive/good_shooter
 	name = "Eagle Eye"
 	desc = "You are better at aiming than most."
-	cost = 2
+	cost = 0
 	var_changes = list("gun_accuracy_mod" = 50)
 	custom_only = FALSE
 	varchange_type = TRAIT_VARCHANGE_MORE_BETTER
@@ -205,7 +205,7 @@
 /datum/trait/positive/pain_tolerance
 	name = "Grit"
 	desc = "You can keep going a little longer, a little harder when you get hurt, Injuries only inflict 85% as much pain, and slowdown from pain is 85% as effective."
-	cost = 2
+	cost = 0
 	var_changes = list("trauma_mod" = 0.85)
 	excludes = list(/datum/trait/negative/neural_hypersensitivity)
 	can_take = ORGANICS
