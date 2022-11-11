@@ -468,17 +468,17 @@
 
 ///////////////////
 //Verbs for humans
-/mob/proc/nsay(message as text|null)
+/mob/proc/nsay(message as text)
 	set name = "NSay"
 	set desc = "Speak into your NIF's Soulcatcher."
 	set category = "IC"
 
 	src.nsay_act(message)
 
-/mob/proc/nsay_act(message as text|null)
+/mob/proc/nsay_act(message as text)
 	to_chat(src, SPAN_WARNING("You must be a humanoid with a NIF implanted to use that."))
 
-/mob/living/carbon/human/nsay_act(message as text|null)
+/mob/living/carbon/human/nsay_act(message as text)
 	if(stat != CONSCIOUS)
 		to_chat(src,SPAN_WARNING("You can't use NSay while unconscious."))
 		return
@@ -498,17 +498,17 @@
 		var/sane_message = sanitize(message)
 		SC.say_into(sane_message,src)
 
-/mob/proc/nme(message as text|null)
+/mob/proc/nme(message as message)
 	set name = "NMe"
 	set desc = "Emote into your NIF's Soulcatcher."
 	set category = "IC"
 
 	src.nme_act(message)
 
-/mob/proc/nme_act(message as text|null)
+/mob/proc/nme_act(message as message)
 	to_chat(src, SPAN_WARNING("You must be a humanoid with a NIF implanted to use that."))
 
-/mob/living/carbon/human/nme_act(message as text|null)
+/mob/living/carbon/human/nme_act(message as message)
 	if(stat != CONSCIOUS)
 		to_chat(src,SPAN_WARNING("You can't use NMe while unconscious."))
 		return
@@ -573,7 +573,7 @@
 	QDEL_NULL(eyeobj)
 	soulcatcher.notify_into("[src] ended AR projection.")
 
-/mob/living/carbon/brain/caught_soul/verb/nsay_brain(message as text|null)
+/mob/living/carbon/brain/caught_soul/verb/nsay_brain(message as text)
 	set name = "NSay"
 	set desc = "Speak into the NIF's Soulcatcher (circumventing AR speaking)."
 	set category = "Soulcatcher"
@@ -584,7 +584,7 @@
 		var/sane_message = sanitize(message)
 		soulcatcher.say_into(sane_message,src,null)
 
-/mob/living/carbon/brain/caught_soul/verb/nme_brain(message as text|null)
+/mob/living/carbon/brain/caught_soul/verb/nme_brain(message as message)
 	set name = "NMe"
 	set desc = "Emote into the NIF's Soulcatcher (circumventing AR speaking)."
 	set category = "Soulcatcher"
