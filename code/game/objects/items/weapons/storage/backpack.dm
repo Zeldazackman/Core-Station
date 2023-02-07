@@ -171,7 +171,7 @@
 	name = "dufflebag"
 	desc = "A large dufflebag for holding extra things."
 	icon_state = "duffle"
-	slowdown = 0.5
+	slowdown = -0.5
 	var/tilted = 0
 	var/can_tilt = 1
 	max_storage_space = INVENTORY_DUFFLEBAG_SPACE
