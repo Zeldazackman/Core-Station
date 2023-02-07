@@ -207,7 +207,8 @@
 					"Secborg model V-2" = "secborg",
 					"Borgi" = "borgi-sec",
 					"Otieborg" = "oties",
-					"Drake" = "drakesec"
+					"Drake" = "drakesec",
+					"Raptor V-4" = "secraptor"
 					)
 	channels = list("Security" = 1)
 	networks = list(NETWORK_SECURITY)
@@ -282,7 +283,8 @@
 					"Dark Medical Hound (Static)" = "medihounddark",
 					"Mediborg model V-2" = "vale",
 					"Borgi" = "borgi-medi",
-					"Drake" = "drakemed"
+					"Drake" = "drakemed",
+					"Raptor V-4" = "medraptor"
 					)
 
 /obj/item/weapon/robot_module/robot/medical/medihound/New(var/mob/living/silicon/robot/R)
@@ -560,7 +562,8 @@
 					"Borgi" = "borgi-sci",
 					"SciHound" = "scihound",
 					"SciHoundDark" = "scihounddark",
-					"Drake" = "drakesci"
+					"Drake" = "drakesci",
+					"Raptor V-4" = "sciraptor"
 					)
 	can_be_pushed = 0
 
