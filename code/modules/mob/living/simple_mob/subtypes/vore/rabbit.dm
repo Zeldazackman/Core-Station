@@ -100,7 +100,9 @@
 	B.vore_sound = "Tauric Swallow"
 	B.release_sound = "Pred Escape"
 	B.fancy_vore = 1
-	B.belly_fullscreen = "anim_belly"
+	B.colorization_enabled = 1
+	B.belly_fullscreen_color = "#b15aac"
+	B.belly_fullscreen = "a_anim_belly"
 
 /datum/say_list/rabbit
 	speak = list("chrrrs.")
