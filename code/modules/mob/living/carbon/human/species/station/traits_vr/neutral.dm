@@ -195,6 +195,7 @@
 	cost = 0
 	custom_only = FALSE
 	var_changes = list("has_glowing_eyes" = 1)
+	has_preferences = list("has_glowing_eyes" = list(TRAIT_PREF_TYPE_BOOLEAN, "Glowing on spawn", TRAIT_VAREDIT_TARGET_SPECIES))
 
 /datum/trait/neutral/glowing_eyes/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..(S,H)
@@ -205,8 +206,10 @@
 	desc = "Your body glows about as much as a PDA light! Settable color and toggle in Abilities tab ingame."
 	cost = 0
 	custom_only = FALSE
+	has_preferences = list("glow_toggle" = list(TRAIT_PREF_TYPE_BOOLEAN, "Glowing on spawn", TRAIT_VAREDIT_TARGET_MOB, FALSE), \
+							"glow_color" = list(TRAIT_PREF_TYPE_COLOR, "Glow color", TRAIT_VAREDIT_TARGET_MOB))
 
-/datum/trait/neutral/glowing_body/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+/datum/trait/neutral/glowing_body/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/list/trait_prefs = null)
 	..(S,H)
 	H.verbs |= /mob/living/proc/glow_toggle
 	H.verbs |= /mob/living/proc/glow_color
@@ -723,7 +726,8 @@
 	desc = "Your body is fexible enough to somehow manage to clamber into a vent albeit at a slower pace than most things used to such tight environments."
 	cost = 0
 	custom_only = FALSE
+	has_preferences = list("pain" = list(TRAIT_PREF_TYPE_BOOLEAN, "Enabled on spawn", TRAIT_VAREDIT_TARGET_MOB, FALSE))
 
-/datum/trait/neutral/vent_crawler/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+/datum/trait/neutral/synth_cosmetic_pain/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/trait_prefs = null)
 	..(S,H)
 	H.verbs |= /mob/living/proc/ventcrawl
