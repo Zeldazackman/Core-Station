@@ -719,15 +719,14 @@
 /datum/trait/neutral/synth_cosmetic_pain/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..(S,H)
 	H.verbs |= /mob/living/carbon/human/proc/toggle_pain_module
+	has_preferences = list("pain" = list(TRAIT_PREF_TYPE_BOOLEAN, "Enabled on spawn", TRAIT_VAREDIT_TARGET_MOB, FALSE))
 
+/datum/trait/neutral/synth_cosmetic_pain/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/trait_prefs = null)
+	..(S,H)
 
 /datum/trait/neutral/vent_crawler
 	name = "Vent Crawler"
 	desc = "Your body is fexible enough to somehow manage to clamber into a vent albeit at a slower pace than most things used to such tight environments."
 	cost = 0
 	custom_only = FALSE
-	has_preferences = list("pain" = list(TRAIT_PREF_TYPE_BOOLEAN, "Enabled on spawn", TRAIT_VAREDIT_TARGET_MOB, FALSE))
-
-/datum/trait/neutral/synth_cosmetic_pain/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/trait_prefs = null)
-	..(S,H)
 	H.verbs |= /mob/living/proc/ventcrawl
